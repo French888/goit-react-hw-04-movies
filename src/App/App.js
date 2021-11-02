@@ -1,53 +1,52 @@
-import {lazy, Suspense} from 'react'
-import { NavLink, Route, Switch} from "react-router-dom"
-import "./App.css"
+import "./App.css";
+import AppBar from "../Components/AppBar";
+import { Load } from "../Components/Loader/Loader";
+import { React, Suspense, lazy } from "react";
+import { Route, Switch } from "react-router-dom";
 
-const Home = lazy(()=> import('../pages/Home' /**webpackChunkName: Home */))
-const Details = lazy(()=> import('../pages/Details' /**webpackChunkName: Details */))
-const Rewiev = lazy(()=> import('../pages/Rewiev' /**webpackChunkName: Rewiev*/))
-const Page = lazy(()=> import('../pages/Page' /**webpackChunkName: Page*/))
+const HomePage = lazy(() =>
+  import("../pages/HomePage" /* webpackChunkName: "home-page" */)
+);
 
-function App() {
+// const MovieDetailsPage = lazy(() =>
+//   import(
+//     "./pages/MovieDetailsPage/MovieDetailsPage.js" /* webpackChunkName: "movie-details-page" */),
+// );
+
+const MoviesPage = lazy(() =>
+  import("../pages/MoviesPage" /* webpackChunkName: "movies-page" */)
+);
+
+const NotFoundPage = lazy(() =>
+  import("../pages/NotFoundPage" /* webpackChunkName: "not-found-page" */)
+);
+
+const App = () => {
   return (
-    <div className="App">
-      <nav>
-        <ul>
-          <li>
-            <NavLink  exact to="/" className="navLink" activeClassName="activeNavLink">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/deteails" className="navLink" activeClassName="activeNavLink">Deteails</NavLink>
-          </li>
-          <li>
-            <NavLink to="/rewiev" className="navLink" activeClassName="activeNavLink">Rewiev</NavLink>
-          </li>
-          <li>
-            <NavLink to="/page" className="navLink" activeClassName="activeNavLink">Page</NavLink>
-          </li>
-        </ul>
-      </nav>
-      <Suspense fallback="waiting">
-      <Switch>
-      <Route exact path="/" component={Home}/>
+    <>
+      <AppBar />
 
-            <Route path="/deteails">
-              <Details/>
-            </Route>
-            <Route path="/rewiev">
-              <Rewiev/>
-            </Route>
-            <Route path="/page">
-              <Page/>
-            </Route>
+      <Suspense fallback={<Load />}>
+        <Switch>
+          <Route path="/" exact>
+            <HomePage />
+          </Route>
 
-            <Route>
-              <p>Page not found</p>
-              </Route>
-              </Switch>
-              </Suspense>
-    </div>
-    
+          <Route path="/movies" exact>
+            <MoviesPage />
+          </Route>
+
+          {/* <Route path="/movies/:movieId">
+            <MovieDetailsPage />
+          </Route> */}
+
+          <Route>
+            <NotFoundPage />
+          </Route>
+        </Switch>
+      </Suspense>
+    </>
   );
-}
+};
 
 export default App;
