@@ -8,10 +8,11 @@ const HomePage = lazy(() =>
   import("../pages/HomePage" /* webpackChunkName: "home-page" */)
 );
 
-// const MovieDetailsPage = lazy(() =>
-//   import(
-//     "./pages/MovieDetailsPage/MovieDetailsPage.js" /* webpackChunkName: "movie-details-page" */),
-// );
+const MovieDetailsPage = lazy(() =>
+  import(
+    "./pages/MovieDetailsPage/MovieDetailsPage.js" /* webpackChunkName: "movie-details-page" */
+  )
+);
 
 const MoviesPage = lazy(() =>
   import("../pages/MoviesPage" /* webpackChunkName: "movies-page" */)
@@ -36,9 +37,9 @@ const App = () => {
             <MoviesPage />
           </Route>
 
-          {/* <Route path="/movies/:movieId">
+          <Route path="/movies/:movieId">
             <MovieDetailsPage />
-          </Route> */}
+          </Route>
 
           <Route>
             <NotFoundPage />

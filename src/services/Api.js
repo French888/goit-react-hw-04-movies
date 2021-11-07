@@ -1,50 +1,39 @@
-import axios from "axios";
-
 const BASE_URL = "https://api.themoviedb.org/3";
-const API_KEY = "17f34524669c2658ba6f6a8fb0e96e0c";
+const API_KEY = "457ca43ff27f2353024c775931568c50";
 
-axios.defaults.baseURL = BASE_URL;
-axios.defaults.params = {
-  api_key: API_KEY,
-};
+async function fetchWithErrorHandling(url = "", config = {}) {
+  const response = await fetch(url, config);
+  return response.ok
+    ? await response.json()
+    : Promise.reject(new Error("Not found"));
+}
 
-const fetchTrendingMovies = () => {
-  return axios.get(`/movie/popular`).catch((error) => error);
-};
+export function fetchTrendingMovies() {
+  return fetchWithErrorHandling(
+    `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`
+  );
+}
 
-const fetchMovieDetails = (movieId) => {
-  return axios
-    .get(`/movie/${movieId}`)
-    .then(({ data }) => data)
-    .catch((error) => error);
-};
+export function fetchSearchMovies(searchQuery) {
+  return fetchWithErrorHandling(
+    `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${searchQuery}&page=1&include_adult=false`
+  );
+}
 
-const fetchMovieCast = (movieId) => {
-  return axios
-    .get(`/movie/${movieId}/credits`)
-    .then(({ data }) => data)
-    .catch((error) => error);
-};
+export function fetchGetMovieDetails(movieId) {
+  return fetchWithErrorHandling(
+    `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`
+  );
+}
 
-const fetchMovieReviews = (movieId) => {
-  return axios
-    .get(`/movie/${movieId}/reviews`)
-    .then(({ data }) => data)
-    .catch((error) => error);
-};
+export function fetchGetMovieCredits(movieId) {
+  return fetchWithErrorHandling(
+    `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
+  );
+}
 
-const fetchSearchMovies = ({ searchQuery = "" }) => {
-  return axios
-    .get(`/search/movie?query=${searchQuery}`)
-    .then(({ data }) => data)
-    .catch((error) => error);
-};
-
-// eslint-disable-next-line import/no-anonymous-default-export
-export default {
-  fetchTrendingMovies,
-  fetchMovieDetails,
-  fetchSearchMovies,
-  fetchMovieCast,
-  fetchMovieReviews,
-};
+export function fetchGetMovieReviews(movieId) {
+  return fetchWithErrorHandling(
+    `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+  );
+}
