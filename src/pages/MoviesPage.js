@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 
-import Searchbar from "../../Components/Search/SearchBar";
-import MoviesList from "../../Components/MoviesList/MoviesList";
-import { fetchSearchMovies } from "../../services/moviesApi";
+import Searchbar from "../Components/Search/SearchBar";
+import MoviesList from "../Components/MoviesList/MoviesList";
+import { fetchSearchMovies } from "../services/Api";
 
 export default function Movies() {
   const [movies, setMovies] = useState(null);

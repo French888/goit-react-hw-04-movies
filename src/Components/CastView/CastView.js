@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { fetchGetMovieCredits } from "../../services/moviesApi.js";
+import { fetchGetMovieCredits } from "../../services/Api";
 import NotFoundActor from "../../img/person.png";
 
 export default function CastView({ movieId }) {

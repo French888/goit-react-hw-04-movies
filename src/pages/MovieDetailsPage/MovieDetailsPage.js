@@ -7,13 +7,13 @@ import {
   useHistory,
   useLocation,
 } from "react-router-dom";
-import { fetchGetMovieDetails } from "../../services/moviesApi.js";
+import { fetchGetMovieDetails } from "../../services/Api.js";
 import { Load } from "../../Components/Loader/Loader.js";
 import s from "./MovieDetailsPage.module.css";
 
 const Review = lazy(() =>
   import(
-    "../../Components/ReviewsView/ReviewsView.js" /* webpackChunkName: "review-view" */
+    "../../Components/ReviewView/ReviewView" /* webpackChunkName: "review-view" */
   )
 );
 const Cast = lazy(() =>

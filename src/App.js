@@ -1,11 +1,11 @@
 import "./App.css";
-import AppBar from "../Components/AppBar";
-import { Load } from "../Components/Loader/Loader";
+import AppBar from "./Components/AppBar";
+import { Load } from "./Components/Loader/Loader.js";
 import { React, Suspense, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
 
 const HomePage = lazy(() =>
-  import("../pages/HomePage" /* webpackChunkName: "home-page" */)
+  import("./pages/HomePage.js" /* webpackChunkName: "home-page" */)
 );
 
 const MovieDetailsPage = lazy(() =>
@@ -15,11 +15,11 @@ const MovieDetailsPage = lazy(() =>
 );
 
 const MoviesPage = lazy(() =>
-  import("../pages/MoviesPage" /* webpackChunkName: "movies-page" */)
+  import("./pages/MoviesPage" /* webpackChunkName: "movies-page" */)
 );
 
 const NotFoundPage = lazy(() =>
-  import("../pages/NotFoundPage" /* webpackChunkName: "not-found-page" */)
+  import("./pages/NotFoundPage" /* webpackChunkName: "not-found-page" */)
 );
 
 const App = () => {
