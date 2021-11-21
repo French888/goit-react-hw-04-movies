@@ -1,0 +1,39 @@
+{
+  "files": {
+    "static/js/0.1cd6864c.chunk.js": "/static/js/0.1cd6864c.chunk.js",
+    "static/js/0.1cd6864c.chunk.js.map": "/static/js/0.1cd6864c.chunk.js.map",
+    "cast-view.js": "/static/js/cast-view.e451918d.chunk.js",
+    "cast-view.js.map": "/static/js/cast-view.e451918d.chunk.js.map",
+    "home-page.js": "/static/js/home-page.76770804.chunk.js",
+    "home-page.js.map": "/static/js/home-page.76770804.chunk.js.map",
+    "main.css": "/static/css/main.c9190e62.chunk.css",
+    "main.js": "/static/js/main.25bae609.chunk.js",
+    "main.js.map": "/static/js/main.25bae609.chunk.js.map",
+    "movie-details-page.css": "/static/css/movie-details-page.2cf8dbd3.chunk.css",
+    "movie-details-page.js": "/static/js/movie-details-page.f745ee2c.chunk.js",
+    "movie-details-page.js.map": "/static/js/movie-details-page.f745ee2c.chunk.js.map",
+    "movies-page.css": "/static/css/movies-page.343b1fbf.chunk.css",
+    "movies-page.js": "/static/js/movies-page.f8f766e2.chunk.js",
+    "movies-page.js.map": "/static/js/movies-page.f8f766e2.chunk.js.map",
+    "not-found-page.js": "/static/js/not-found-page.1d9c1365.chunk.js",
+    "not-found-page.js.map": "/static/js/not-found-page.1d9c1365.chunk.js.map",
+    "review-view.js": "/static/js/review-view.e322e5b0.chunk.js",
+    "review-view.js.map": "/static/js/review-view.e322e5b0.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.aec65813.js",
+    "runtime-main.js.map": "/static/js/runtime-main.aec65813.js.map",
+    "static/js/9.0f1393ef.chunk.js": "/static/js/9.0f1393ef.chunk.js",
+    "static/js/9.0f1393ef.chunk.js.map": "/static/js/9.0f1393ef.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.c9190e62.chunk.css.map": "/static/css/main.c9190e62.chunk.css.map",
+    "static/css/movie-details-page.2cf8dbd3.chunk.css.map": "/static/css/movie-details-page.2cf8dbd3.chunk.css.map",
+    "static/css/movies-page.343b1fbf.chunk.css.map": "/static/css/movies-page.343b1fbf.chunk.css.map",
+    "static/js/9.0f1393ef.chunk.js.LICENSE.txt": "/static/js/9.0f1393ef.chunk.js.LICENSE.txt",
+    "static/media/person.deb5d3ee.png": "/static/media/person.deb5d3ee.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aec65813.js",
+    "static/js/9.0f1393ef.chunk.js",
+    "static/css/main.c9190e62.chunk.css",
+    "static/js/main.25bae609.chunk.js"
+  ]
+}
